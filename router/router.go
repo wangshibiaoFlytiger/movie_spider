@@ -4,6 +4,7 @@ import (
 	apiproject_config "apiproject/config"
 	"apiproject/controller"
 	c_kafka "apiproject/controller/kafka"
+	c_movie "apiproject/controller/movie"
 	c_video "apiproject/controller/video"
 	c_wxpay "apiproject/controller/wxpay"
 	"apiproject/middleware"
@@ -86,6 +87,12 @@ func Init() *gin.Engine {
 	}
 	wxpayGroup.POST("/wxH5Pay", c_wxpay.WxH5Pay)
 	wxpayGroup.POST("/wxH5PayCallback", c_wxpay.WxH5PayCallback)
+
+	spiderGroup := engine.Group("/api/spider")
+	spiderGroup.POST("/craw88ysFilm", c_movie.Craw88ysFilm)
+
+	movieGroup := engine.Group("/api/movie")
+	movieGroup.GET("/findMovieList", c_movie.FindMovieList)
 
 	return engine
 }
