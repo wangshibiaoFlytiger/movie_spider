@@ -187,7 +187,7 @@ func (this *movie88ysService) CrawDetail(movie *m_movie.Movie) error {
 					return
 				}
 				tmp1 := split[1]
-				videoUrl = "https://youku.com-ok-56.com" + strings.Split(tmp1, "\";")[0]
+				videoUrl = util.ParseUrlPrefix(playPageUrl) + strings.Split(tmp1, "\";")[0]
 			}
 
 			playUrl := m_movie.PlayUrl{
