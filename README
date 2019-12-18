@@ -1,3 +1,6 @@
+项目原始仓库地址: https://github.com/wangshibiaoFlytiger/movie_spider
+#若本项目给您带来收获, 还请您动动小拇指,右上角给点个赞哈,万分感谢哈哈!!!
+
 本工程基于golang开发脚手架https://github.com/wangshibiaoFlytiger/apiproject创建
 功能: 爬取网络上的免费影片资源, 同时提供api接口, 输出爬取结果
 
