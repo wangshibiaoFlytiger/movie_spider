@@ -15,8 +15,8 @@ type movieService struct {
 /**
 查询影片列表
 */
-func (this *movieService) FindMovieList() (movieList []m_movie.Movie, totalCount int) {
-	movieList, totalCount = d_movie.MovieDao.FindMovieList(bson.M{}, 1, 1000)
+func (this *movieService) FindMovieList(page int, rows int) (movieList []m_movie.Movie, totalCount int) {
+	movieList, totalCount = d_movie.MovieDao.FindMovieList(bson.M{}, page, rows)
 	return
 }
 
