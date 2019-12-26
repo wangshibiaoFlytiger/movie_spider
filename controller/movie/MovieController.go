@@ -32,3 +32,16 @@ func FindMovieList(ctx *gin.Context) {
 		},
 	})
 }
+
+/**
+查询某影片
+*/
+func GetMovie(ctx *gin.Context) {
+	movieId := ctx.Query("movieId")
+	movie := s_movie.MovieService.GetMovie(movieId)
+
+	ctx.JSON(http.StatusOK, gin.H{
+		"code": 1,
+		"data": movie,
+	})
+}

@@ -93,6 +93,7 @@ func Init() *gin.Engine {
 
 	movieGroup := engine.Group("/api/movie")
 	movieGroup.GET("/findMovieList", c_movie.FindMovieList)
+	movieGroup.GET("/getMovie", c_movie.GetMovie)
 
 	return engine
 }
